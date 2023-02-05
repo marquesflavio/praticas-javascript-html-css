@@ -1,0 +1,62 @@
+.banner{
+    display: grid;
+    gap: 1rem;
+}
+.banner img:nth-child(1){
+    grid-column: 1/3;
+}
+.banner img:nth-child(4){
+    grid-column: 2/3;
+    grid-row: 2/4;
+}
+.eventos__item{
+    display: grid;
+    grid-template-columns: 1fr auto; /*Determina o valor de cada coluna*/
+    grid-template-rows: auto repeat(2,1fr) auto; /*Determina o valor de cada linha, o repeat, é pq as duas linhas do meio tem o mesmo valor*/
+    grid-template-areas: /*Essa função cria divisões dentro do bloco, de acordo com o que informamos*/
+        "imagem imagem"
+        "nome nome"
+        "data data"
+        "local botao";
+}
+.eventos__item img{
+    grid-area: imagem;
+}
+.eventos__item h3{
+    grid-area: nome;
+    align-self: center;
+}
+.eventos__item h4{
+    grid-area: data;
+}
+.eventos__item h5{
+    grid-area: local;
+    align-self: end;
+}
+.eventos__item button{
+    grid-area: botao;
+}
+.agenda__lista{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+}
+.agenda__lista img{
+    grid-column: 1/3;
+
+}
+@media(min-width:720px){
+    .banner img:nth-child(1){
+        grid-row: 1/3;
+        grid-column: 1/2;
+    }
+    .banner{
+        grid-template-columns: calc(50% - 0.75rem) auto auto; /*Define a largura das colunas, para a primeira coluna, que é mais larga, foi feito um cálculo para descontar o gap existente. Cada valor corresponde a uma coluna, os auto são desnecessários*/
+        
+        /*Se o valor auto for um antecessor do outro valor que está sendo aplicado, ele deverá estar declarado.*/
+        column-gap: 1.5rem;
+    }
+    .banner img:nth-child(4){ /*possível utilizar de forma mais simplificada com grid-area*/
+        grid-area: 3/4/1/3; /*column-star/column-end row-start/row-end*/
+    }
+}

@@ -1,0 +1,94 @@
+/*Cabeçalho*/
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap; /*quebra de texto para telas pequenas*/
+    column-gap: 33px; /*espalamento entre itens para telas pequenas*/
+
+}
+.categorias__lista{
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+.destaques{
+    display: flex;
+    align-items: center;
+    gap: 10px; /*linha e coluna*/
+}
+.destaques__barra{
+    flex-grow: 1;
+}
+/*Próximos eventos*/
+.eventos__lista{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.5rem;
+    row-gap: 10px;
+    justify-content: center;
+}
+.eventos__item{
+    flex-grow: 1;
+    max-width: 400px;
+}
+.agenda__lista{
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1rem;
+    column-gap: 1.5rem;
+    justify-content: center;
+    
+}
+.agenda__item{
+    flex-grow: 1;
+}
+/*rodapé*/
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.rodape__logo{
+    align-self: flex-end;
+}
+@media(min-width:720px){ /*Essa regra serve para telas de 720px de largura - tablets*/
+    
+    /*Cabeçalho*/
+    .menu{
+        column-gap: 75px; /*Dessa forma, o gap entre as colunas, em telas de tablet será de 75px*/
+    }
+    .categorias__lista{
+        flex-wrap: wrap;
+        column-gap: 1.5rem;
+        row-gap: 1rem;
+    }
+    .eventos__lista{
+        justify-content: end;
+    }
+    .agenda__lista {
+        justify-content: end;
+    }
+}
+@media(min-width:1440px){
+    /*Cabeçalho*/
+    .menu{
+        column-gap: 105px;
+        flex-wrap: nowrap; /*retirada a quebra de linha, pois o espaçamento column-gap ficou muito grande.*/
+    }
+    .menu__item:nth-child(1){ /*Escolhemos o item de class "menu__item" e aplicamos ao 1º nth-child a posição na ordem 1. E assim aos demais, dessa forma conseguimos jogar o menu de pesquisa para a segunda posição, mudando o fluxo normal do HTML.*/
+        order: 1;
+    }
+    .menu__item:nth-child(2){
+        order: 3;
+    }
+    .menu__item:nth-child(3){
+        order: 4;
+    }
+    .menu__item:nth-child(4){
+        order: 5;
+    }
+    .menu__item:nth-child(5){
+        order: 2;
+    }
+}
