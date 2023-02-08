@@ -1,5 +1,10 @@
-const numeros = [100, 200, 300, 400, 500, 600]
+const notas = [10, 6.5, 8, 7.5]
 
-for (let elementos of numeros){
-    console.log(elementos)
+let = somaDasNotas = 0
+
+for (let nota of notas){
+    somaDasNotas += nota
 }
+
+const media = somaDasNotas / notas.length
+console.log(`A média das notas é: ${media}`)
