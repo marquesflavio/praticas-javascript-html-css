@@ -8,7 +8,10 @@ function calculaMedia(notasDaSala){
    const somaDasNotas = notasDaSala.reduce((acc, nota) => {
         return acc + nota;
     },0)
-    console.log(somaDasNotas)
+    
+    const media = somaDasNotas / notasDaSala.length
+    return media
 }
-
-calculaMedia(salaJS)
+console.log(`A média da sala de JavaScript é ${calculaMedia(salaJS)}`)
+console.log(`A média da sala de Java é ${calculaMedia(salaJava)}`)
+console.log(`A média da sala de Python é ${calculaMedia(salaPython)}`)
