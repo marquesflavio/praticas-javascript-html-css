@@ -4,8 +4,8 @@ class Navi {
     
     //constructor define atributos
     constructor(nome, altura){
-        this.nome;
-        this.altura;
+        this.nome = nome;
+        this.altura = altura;
     }
     //métodos (funções)
     correr(){
@@ -25,17 +25,17 @@ class Omaticaya extends Navi{
     rabo = 'mais fino e comprido';
     velocidadeNaCorrida;
     
+    escalar(){
+        return this.nome + 'escala montanhas'
+    }
     constructor(nome, altura, velocidadeNaCorrida){
         super(nome, altura)
         this.velocidadeNaCorrida = velocidadeNaCorrida
     }
     
-    escalar(){
-        return this.nome + 'escala montanhas'
-    }
 }
     
-    const kiri = new Omaticaya('Kiri Sully', 2.32, 36)
+    const kiri = new Omaticaya('Kiri Sully', 2.32)
     console.log(kiri)
 
 
